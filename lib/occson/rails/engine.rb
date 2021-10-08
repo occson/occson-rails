@@ -13,7 +13,7 @@ module Occson
         EnvironmentLoader.new(::Rails.root, ::Rails.env).call
 
         unless ENV.key?('OCCSON_ACCESS_TOKEN') && ENV.key?('OCCSON_PASSPHRASE')
-          puts "Oh my, occson will not load configuration. Please setup OCCSON_ACCESS_TOKEN and OCCSON_PASSPHRASE"
+          puts "Please setup OCCSON_ACCESS_TOKEN and OCCSON_PASSPHRASE."
 
           next
         end
@@ -26,7 +26,7 @@ module Occson
         document = Occson::Document.new(uri, access_token, passphrase).download
 
         if document.blank?
-          puts "Oh my, occson will not load configuration. Can't download document"
+          puts "Occson cannot download document."
 
           next
         end
