@@ -1,8 +1,6 @@
-# Occson::Rails
-Short description and motivation.
+# OCCSON
 
-## Usage
-How to use my plugin.
+Store, manage and deploy Rails configuration securely with Occson.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -16,13 +14,34 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install occson-rails
+## Usage
+Use occson rails engine in two simple steps:
+
+1. Define application version in `config/application.rb`
+
+```ruby
+module Dummy
+  VERSION = "0.1.0"
+
+  class Application < Rails::Application
+  end
+end
 ```
 
-## Contributing
-Contribution directions go here.
+2. Create `.env` file with occson related environment variables
+
+```
+OCCSON_ACCESS_TOKEN=[ACCESS_TOKEN]
+OCCSON_PASSPHRASE=[PASSPHRASE]
+```
+
+You can create `.env` file by environment eg.:
+
+```
+.env
+.env.development
+.env.development.local
+```
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
