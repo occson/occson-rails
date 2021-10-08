@@ -1,16 +1,12 @@
 module Occson
   module Rails
     class EnvironmentStorer
-      def initialize(content)
-        @content = content
+      def initialize(environment)
+        @environment = environment
       end
 
       def call
-        @content.split("\n").each do |line|
-          next if line.start_with?('#')
-
-          key, value = line.split("=", 2) # @TODO handle wrapped values
-
+        @environment.each do |key, value|
           ENV.store(key, value)
         end
       end

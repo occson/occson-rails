@@ -1,10 +1,13 @@
 require "test_helper"
 
 class Occson::Rails::EnvironmentStorerTest < ActiveSupport::TestCase
-  test "should store environment variables from provided content" do
-    content = "FOO=bar\nKABOOM=1"
+  test "should store environment variables from provided hash" do
+    environment = {
+      "FOO" => "bar",
+      "KABOOM" => "1"
+    }
 
-    environment_storer = Occson::Rails::EnvironmentStorer.new(content)
+    environment_storer = Occson::Rails::EnvironmentStorer.new(environment)
     environment_storer.call
 
     assert_equal "bar", ENV.fetch("FOO")

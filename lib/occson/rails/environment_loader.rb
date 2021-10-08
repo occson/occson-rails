@@ -10,7 +10,7 @@ module Occson
         files.each do |file|
           next unless File.exist?(file)
 
-          EnvironmentStorer.new(File.read(file)).call
+          EnvironmentStorer.new(EnvironmentParser.new(File.read(file)).call).call
         end
       end
 

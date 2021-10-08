@@ -1,6 +1,7 @@
 require 'occson'
 
 require_relative 'application_version'
+require_relative 'environment_parser'
 require_relative 'environment_storer'
 require_relative 'environment_loader'
 
@@ -31,7 +32,7 @@ module Occson
           next
         end
 
-        EnvironmentStorer.new(document).call
+        EnvironmentStorer.new(EnvironmentParser.new(document).call).call
       end
     end
   end
