@@ -17,5 +17,5 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "CHANGELOG.md"]
 
   spec.add_dependency "rails"
-  spec.add_dependency "occson", "4.0.0"
+  spec.add_dependency "occson", "4.1.0"
 end
