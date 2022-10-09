@@ -20,7 +20,7 @@ module Occson
         end
 
         version = ApplicationVersion.new(::Rails.application).call
-        uri = "occson://#{version}/.env.#{::Rails.env}"
+        uri = "occson://#{version}/.env"
         access_token = ENV.fetch('OCCSON_ACCESS_TOKEN')
         passphrase = ENV.fetch('OCCSON_PASSPHRASE')
 
