@@ -16,6 +16,6 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "CHANGELOG.md"]
 
-  spec.add_dependency "rails", ">= 5.2"
+  spec.add_development_dependency "rails", "#{ENV['TEST_RAILS_VERSION'] || '>= 5.2'}"
   spec.add_dependency "occson", "4.1.0"
 end
