@@ -10,7 +10,7 @@ require "occson/rails"
 module Dummy
   VERSION = "0.1.0"
   class Application < Rails::Application
-    config.load_defaults "#{ ENV['TEST_RAILS_VERSION'] ? ENV['TEST_RAILS_VERSION'][0..2] : '5.2' }".to_f
+    config.load_defaults "#{ ENV['TEST_RAILS_VERSION'] ? ENV['TEST_RAILS_VERSION'][0..2] : '6.1' }".to_f
 
     # Configuration for the application, engines, and railties goes here.
     #
