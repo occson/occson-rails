@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md", "CHANGELOG.md"]
 
   spec.add_dependency "rails", "#{ENV['TEST_RAILS_VERSION'] || '>= 6.1'}"
-  spec.add_dependency "occson", "4.1.1"
+  spec.add_dependency "occson", "4.2.0"
 
   spec.required_ruby_version = '>= 2.7.0'
 end
